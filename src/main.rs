@@ -31,6 +31,10 @@ fn expand_around_center(string: &str, mut left_center: usize, mut right_center: 
 fn find_largest_palindrome(string: &str) -> &str {
     let mut best_word = &string[0..0];
 
+    if string.len() == 0 {
+        return &string[0..0]
+    }
+
     for i in 1..(string.len() - 1) {
         let word = expand_around_center(&string, i, i);
 
